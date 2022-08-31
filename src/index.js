@@ -24,4 +24,27 @@ document.addEventListener('DOMContentLoaded', () => {
         `
      })
     .catch(error => error.message)
+    
+    form.addEventListener('submit', e => {
+
+        e.preventDefault()
+        const newComment = document.getElementById('comment')
+
+        addComment(newComment.value)
+        removeComment(newli)
+        form.reset()
+    })
+
+    function addComment(string) {
+        if (string !== '') {
+            newli = document.createElement('li')
+            comments.appendChild(newli)
+            newli.innerText = string
+        }
+    } 
+    function removeComment(element) {
+        element.addEventListener('click',() => {
+            element.remove()
+        })
+    } 
 })
