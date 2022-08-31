@@ -47,4 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
             element.remove()
         })
     } 
+    increaseLikes()
 })
+
+function increaseLikes() {
+    const like = document.getElementById("like-count")
+    let totalLikes = 0
+    document.getElementById("like-button").addEventListener("click", () => {
+      totalLikes += 1;
+      return like.textContent = `${totalLikes} likes`
+    })
+}
